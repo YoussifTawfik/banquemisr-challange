@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="1735298839-1" author="Youssif Tawfik">
+        <update tableName="USERS_TBL">
+<!--            Plain text is: password123-->
+            <column name="PASSWORD" value="$2a$10$.wPZ8W1RwI8a2Twmxck5pu1PW2.PQTzFWLGdvbo76N5XstKpaTUTy"/>
+            <where>UUID = '123e4567-e89b-12d3-a456-426614174000'</where>
+        </update>
+        <update tableName="USERS_TBL">
+<!--              Plain text is: password456-->
+            <column name="PASSWORD" value="$2a$10$o3BZ0B5mxI4lMfZci0xE/ujfG/KXFQlLOuI9x38cdwKuQppF3KaN6"/>
+            <where>UUID = '223e4567-e89b-12d3-a456-426614174001'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

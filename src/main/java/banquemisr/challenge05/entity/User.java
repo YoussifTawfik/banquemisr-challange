@@ -1,8 +1,6 @@
 package banquemisr.challenge05.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table(name = "USERS_TBL")
@@ -24,4 +22,8 @@ public class User extends BaseEntity{
 
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "FK_ROLE_ID")
+    private Role role;
 }

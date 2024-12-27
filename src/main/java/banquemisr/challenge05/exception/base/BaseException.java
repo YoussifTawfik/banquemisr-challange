@@ -3,7 +3,7 @@ package banquemisr.challenge05.exception.base;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-public abstract class BaseException extends Exception {
+public abstract class BaseException extends RuntimeException {
 
     @Getter
     private final HttpStatus httpStatus;
