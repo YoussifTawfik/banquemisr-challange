@@ -1,5 +1,6 @@
 package banquemisr.challenge05.exception.base;
 
+import banquemisr.challenge05.exception.InvalidTokenException;
 import banquemisr.challenge05.exception.InvalidUsernameOrPasswordException;
 import banquemisr.challenge05.exception.NotFoundException;
 import banquemisr.challenge05.exception.UnauthorizedException;
@@ -19,5 +20,8 @@ public class ExceptionFactory {
 
     public static BaseException throwUnauthorizedException(){
         return new UnauthorizedException();
+    }
+    public static BaseException throwInvalidTokenException(){
+        return new InvalidTokenException();
     }
 }
