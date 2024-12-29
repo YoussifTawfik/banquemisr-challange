@@ -1,7 +1,9 @@
 package banquemisr.challenge05.exception.base;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -19,22 +21,32 @@ public class BaseExceptionHandler {
                 .body(new ErrorDetails(ex.getError().getCode(), ex.getError().getMessage(), LocalDateTime.now()));
     }
 
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ValidationErrorResponse> validationExceptionHandler(MethodArgumentNotValidException ex) {
+        return handleMethodArgumentNotValidException(ex);
+    }
+
+    @ExceptionHandler(AuthorizationDeniedException.class)
+    public ResponseEntity<ValidationErrorResponse> authorizationExceptionHandler(AuthorizationDeniedException ex) {
+        return handleUnauthorizedException();
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ValidationErrorResponse> generalExceptionHandler(Exception ex) {
-        if (ex instanceof MethodArgumentNotValidException exception) {
-            return handleMethodArgumentNotValidException(exception);
-
-        } else {
-            ex.printStackTrace();
-            return handleGeneralException();
-        }
-
+        ex.printStackTrace();
+        return handleGeneralException();
     }
 
     private ResponseEntity<ValidationErrorResponse> handleGeneralException() {
         ValidationErrorResponse response = new ValidationErrorResponse("Unexpected exception occurred, please contact support.",
                 "G-600.01");
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    private ResponseEntity<ValidationErrorResponse> handleUnauthorizedException() {
+        ValidationErrorResponse response = new ValidationErrorResponse("User doesn't have the right permission!",null,
+                "G-600.02");
+        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
 
     private ResponseEntity<ValidationErrorResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
