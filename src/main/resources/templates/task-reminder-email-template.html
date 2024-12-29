@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <style>
+        .todo-list-btn {
+            background-color: #5FBB46;
+            padding: 15px 25px;
+            text-decoration: none;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 14px
+            font-weight: bold;
+        }
+        .todo-list-btn:hover {
+            background-color: #78D164;
+        }
+    </style>
+</head>
+<body>
+
+<h4 style="margin-bottom: 10px;">Hi [[${username}]]</h4>
+<h4>This is a friendly reminder that you have tasks due tomorrow. Please find the details below:</h4>
+<h4><strong>Tasks Due:</strong></h4>
+<h4>[[${title}]] - Due by [[${dueDate}]]</h4>
+<h4>If you need assistance or have any questions, feel free to reach out to us.</h4>
+<a rel=noopener href="#" target="_blank" class="todo-list-btn">View Your To-Do List</a>
+<h4>Thank you for staying on top of your responsibilities!</h4>
+<h4>Best regards,</h4>
+<h4>Task-Management. Support Team</h4>
+</body>
+</html>

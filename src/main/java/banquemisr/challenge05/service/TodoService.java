@@ -9,6 +9,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 public interface TodoService {
 
     CreateTodoResponse create(CreateTodoReqDto reqDto, String userUuid);
@@ -18,5 +21,7 @@ public interface TodoService {
     Page<TodoListingResponse> getAll(Pageable pageable, Specification<Todo> specification, String userUuid);
 
     void delete(String todoUuid, String userUuid);
+
+    List<Todo> fetchTodosWithinPeriod(LocalDateTime min, LocalDateTime max);
 
 }

@@ -18,6 +18,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class TodoServiceImpl implements TodoService {
@@ -49,5 +52,10 @@ public class TodoServiceImpl implements TodoService {
     @Transactional
     public void delete(String todoUuid, String userUuid) {
         todoRepository.delete(todoUuid, userUuid);
+    }
+
+    @Override
+    public List<Todo> fetchTodosWithinPeriod(LocalDateTime min, LocalDateTime max) {
+        return todoRepository.fetchTodosInPeriod(min, max);
     }
 }
