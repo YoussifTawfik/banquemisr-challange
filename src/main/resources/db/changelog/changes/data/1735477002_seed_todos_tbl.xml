@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="1735477002-2" author="Youssif Tawfik">
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="7d2a2105-933f-494d-8478-d36ce07c3d85"/>
+            <column name="TITLE" value="Complete Project Proposal"/>
+            <column name="DESCRIPTION" value="Finalize and submit the project proposal document for the new client."/>
+            <column name="STATUS" value="IN_PROGRESS"/>
+            <column name="PRIORITY" value="HIGH"/>
+            <column name="DUE_DATE" valueDate="2024-12-31T17:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-29T10:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T11:30:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="1ebccc58-abfa-4243-aac8-ca4995e55cf3"/>
+            <column name="TITLE" value="Prepare Monthly Report"/>
+            <column name="DESCRIPTION" value="Gather data and create the financial report for December 2024."/>
+            <column name="STATUS" value="TODO"/>
+            <column name="PRIORITY" value="MEDIUM"/>
+            <column name="DUE_DATE" valueDate="2025-01-05T12:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-29T09:30:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T09:30:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="dad59a10-0c66-4fb7-96ac-08dbd3db31b6"/>
+            <column name="TITLE" value="Organize Team Meeting"/>
+            <column name="DESCRIPTION" value="Schedule and organize the first team meeting of the year, discussing goals and strategies."/>
+            <column name="STATUS" value="COMPLETED"/>
+            <column name="PRIORITY" value="LOW"/>
+            <column name="DUE_DATE" valueDate="2024-12-28T14:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-27T16:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-28T15:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="2dc929aa-cc58-444d-9606-f02a726315d3"/>
+            <column name="TITLE" value="Update Website Content"/>
+            <column name="DESCRIPTION" value="Revise the About Us page and add new team member profiles."/>
+            <column name="STATUS" value="TODO"/>
+            <column name="PRIORITY" value="MEDIUM"/>
+            <column name="DUE_DATE" valueDate="2025-01-10T10:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-28T09:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-28T09:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="0aa048b5-27b5-4e45-aa6b-0b4e377ac3dc"/>
+            <column name="TITLE" value="Plan Marketing Campaign"/>
+            <column name="DESCRIPTION" value="Develop a strategy for the January marketing campaign, including social media and email promotions."/>
+            <column name="STATUS" value="IN_PROGRESS"/>
+            <column name="PRIORITY" value="HIGH"/>
+            <column name="DUE_DATE" valueDate="2025-01-07T18:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-28T14:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T08:30:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="e47b3392-35bd-4220-ac52-a635eb7d4589"/>
+            <column name="TITLE" value="Backup Database"/>
+            <column name="DESCRIPTION" value="Perform a full backup of the production database before the system update."/>
+            <column name="STATUS" value="COMPLETED"/>
+            <column name="PRIORITY" value="HIGH"/>
+            <column name="DUE_DATE" valueDate="2024-12-27T23:59:59"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-26T10:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-27T22:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="712fbfc2-18db-4f21-be06-c98a4bb17702"/>
+            <column name="TITLE" value="Conduct Performance Reviews"/>
+            <column name="DESCRIPTION" value="Schedule and conduct Q4 performance reviews with all team members."/>
+            <column name="STATUS" value="TODO"/>
+            <column name="PRIORITY" value="HIGH"/>
+            <column name="DUE_DATE" valueDate="2025-01-15T17:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='223e4567-e89b-12d3-a456-426614174001')"/>
+            <column name="CREATED_AT" valueDate="2024-12-28T08:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-28T08:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="36fa4ed9-4c5d-4b9c-82c2-6ec93e3a1f17"/>
+            <column name="TITLE" value="Organize Team Building Event"/>
+            <column name="DESCRIPTION" value="Plan a team-building event to boost morale and improve collaboration."/>
+            <column name="STATUS" value="IN_PROGRESS"/>
+            <column name="PRIORITY" value="MEDIUM"/>
+            <column name="DUE_DATE" valueDate="2025-01-20T12:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='223e4567-e89b-12d3-a456-426614174001')"/>
+            <column name="CREATED_AT" valueDate="2024-12-28T13:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T09:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="3d74b62a-84da-42cc-9b5c-eebdd8e5f2f8"/>
+            <column name="TITLE" value="Update Employee Handbook"/>
+            <column name="DESCRIPTION" value="Review and update company policies in the employee handbook."/>
+            <column name="STATUS" value="TODO"/>
+            <column name="PRIORITY" value="LOW"/>
+            <column name="DUE_DATE" valueDate="2025-02-01T10:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='223e4567-e89b-12d3-a456-426614174001')"/>
+            <column name="CREATED_AT" valueDate="2024-12-29T10:30:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T10:30:00"/>
+        </insert>
+
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="c14b497d-bb6b-4961-9d7e-6f7a7d121650"/>
+            <column name="TITLE" value="Finalize Budget for Q1"/>
+            <column name="DESCRIPTION" value="Review and finalize the budget plan for the first quarter of 2025."/>
+            <column name="STATUS" value="TODO"/>
+            <column name="PRIORITY" value="HIGH"/>
+            <column name="DUE_DATE" valueDate="2025-01-10T14:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-29T11:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T11:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="fb39b9b7-98d4-4d43-90be-68d28f404ccd"/>
+            <column name="TITLE" value="Update CRM System"/>
+            <column name="DESCRIPTION" value="Implement updates and improvements to the customer relationship management system."/>
+            <column name="STATUS" value="IN_PROGRESS"/>
+            <column name="PRIORITY" value="MEDIUM"/>
+            <column name="DUE_DATE" valueDate="2025-01-15T16:00:00"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-29T12:30:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-29T13:00:00"/>
+        </insert>
+        <insert tableName="TODOS_TBL">
+            <column name="UUID" value="0e238a5b-6350-4303-b640-b26e8de26dbd"/>
+            <column name="TITLE" value="Prepare Year-End Financial Statements"/>
+            <column name="DESCRIPTION" value="Prepare and review year-end financial statements for 2024."/>
+            <column name="STATUS" value="COMPLETED"/>
+            <column name="PRIORITY" value="HIGH"/>
+            <column name="DUE_DATE" valueDate="2024-12-30T23:59:59"/>
+            <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
+            <column name="CREATED_AT" valueDate="2024-12-28T15:00:00"/>
+            <column name="UPDATED_AT" valueDate="2024-12-30T22:30:00"/>
+        </insert>
+
+
+
+    </changeSet>
+</databaseChangeLog>

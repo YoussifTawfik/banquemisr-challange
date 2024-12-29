@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
 
 
-    <changeSet id="1735308619-3" author="Youssif Tawfik">
+    <changeSet id="1735308619-1" author="Youssif Tawfik">
         <createTable tableName="TODOS_TBL">
             <column name="PK_ID" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
