@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="1735301920-1" author="Youssif Tawfik">
+        <update tableName="USERS_TBL">
+            <column name="FK_ROLE_ID" valueComputed="(select PK_ID from ROLES_TBL where CODE='ADMIN')"/>
+            <where>UUID = '123e4567-e89b-12d3-a456-426614174000'</where>
+        </update>
+        <update tableName="USERS_TBL">
+            <column name="FK_ROLE_ID" valueComputed="(select PK_ID from ROLES_TBL where CODE='USER')"/>
+            <where>UUID = '223e4567-e89b-12d3-a456-426614174001'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

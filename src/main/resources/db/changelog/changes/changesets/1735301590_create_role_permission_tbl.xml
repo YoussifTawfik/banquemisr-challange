@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="1735301590-1" author="Youssif Tawfik">
+        <createTable tableName="ROLE_PERMISSIONS_TBL">
+            <column name="PK_ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="FK_ROLE_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_PERMISSION_ID" type="BIGINT">
+                <constraints nullable="false" />
+            </column>
+            <column name="CREATED_AT" type="DATETIME(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_AT" type="DATETIME(6)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

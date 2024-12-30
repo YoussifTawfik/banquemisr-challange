@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="1735298839-1" author="Youssif Tawfik">
+        <insert tableName="ROLES_TBL">
+            <column name="code" value="ADMIN" />
+            <column name="name" value="Administrator" />
+            <column name="description" value="Role for system administrators" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1735298839-2" author="Youssif Tawfik">
+        <insert tableName="ROLES_TBL">
+            <column name="code" value="USER" />
+            <column name="name" value="Standard User" />
+            <column name="description" value="Role for regular users" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1735298839-3" author="Youssif Tawfik">
+        <insert tableName="ROLES_TBL">
+            <column name="code" value="GUEST" />
+            <column name="name" value="Guest User" />
+            <column name="description" value="Role for guest access" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

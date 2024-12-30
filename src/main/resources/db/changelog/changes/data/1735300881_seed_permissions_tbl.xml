@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="1735300881-1" author="Youssif Tawfik">
+        <insert tableName="PERMISSIONS_TBL">
+            <column name="code" value="READ" />
+            <column name="name" value="Read Privileges" />
+            <column name="description" value="Permission to read data" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1735300881-2" author="Youssif Tawfik">
+        <insert tableName="PERMISSIONS_TBL">
+            <column name="code" value="WRITE" />
+            <column name="name" value="Write Privileges" />
+            <column name="description" value="Permission to write data" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1735300881-3" author="Youssif Tawfik">
+        <insert tableName="PERMISSIONS_TBL">
+            <column name="code" value="DELETE" />
+            <column name="name" value="Delete Privileges" />
+            <column name="description" value="Permission to delete data" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1735300881-4" author="Youssif Tawfik">
+        <insert tableName="PERMISSIONS_TBL">
+            <column name="code" value="UPDATE" />
+            <column name="name" value="Update Privileges" />
+            <column name="description" value="Permission to update data" />
+            <column name="CREATED_AT" valueComputed="now()"/>
+            <column name="UPDATED_AT" valueComputed="now()"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
