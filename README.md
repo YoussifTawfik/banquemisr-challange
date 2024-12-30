@@ -21,10 +21,10 @@ The **Task Management Project** is a Spring Boot application designed to manage 
 - Create, Read, Update, and Delete todos.
 - Assign priorities (Low, Medium, High).
 - Set deadlines for todo.
-- Manage task statuses (Pending, In Progress, Completed).
+- Manage todo statuses (Pending, In Progress, Completed).
 - RESTful APIs for seamless integration.
 - Authentication and authorization based on user roles and permissions.
-- Notification system to alert users one day before their task's due date.
+- Notification system to alert users one day before their todo's due date.
 
 ---
 
@@ -32,6 +32,8 @@ The **Task Management Project** is a Spring Boot application designed to manage 
 - **Java 17**
 - **Spring Boot 3.4.1**
 - **MySQL**
+- **Liquibase**
+- **SMTP**
 - **Gradle**
 - **Postman** (for API testing)
 
@@ -90,7 +92,7 @@ To run the application locally:
 ## API Endpoints (Postman collection is included in the project)
 Below are the main endpoints available:
 
-### Task Endpoints
+### Todo Endpoints
 | HTTP Method | Endpoint                        | Description              |
 |-------------|---------------------------------|--------------------------|
 | GET         | `/task-management/todos`        | Retrieve all todos       |
@@ -99,7 +101,7 @@ Below are the main endpoints available:
 | PATCH       | `/task-management/todos/{uuid}` | Update an existing todo  |
 | DELETE      | `/task-management/todos{uuid}`  | Delete a todo            |
 
-### Example JSON Payload for Creating/Updating a Task
+### Example JSON Payload for Creating/Updating a Todo
 ```json
 {
   "title": "Complete documentation",
