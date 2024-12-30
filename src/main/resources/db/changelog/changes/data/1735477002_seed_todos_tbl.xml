@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
 
 
-    <changeSet id="1735477002-2" author="Youssif Tawfik">
+    <changeSet id="1735477002-1" author="Youssif Tawfik">
         <insert tableName="TODOS_TBL">
             <column name="UUID" value="7d2a2105-933f-494d-8478-d36ce07c3d85"/>
             <column name="TITLE" value="Complete Project Proposal"/>
@@ -33,7 +33,7 @@
             <column name="UUID" value="dad59a10-0c66-4fb7-96ac-08dbd3db31b6"/>
             <column name="TITLE" value="Organize Team Meeting"/>
             <column name="DESCRIPTION" value="Schedule and organize the first team meeting of the year, discussing goals and strategies."/>
-            <column name="STATUS" value="COMPLETED"/>
+            <column name="STATUS" value="DONE"/>
             <column name="PRIORITY" value="LOW"/>
             <column name="DUE_DATE" valueDate="2024-12-28T14:00:00"/>
             <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
@@ -66,7 +66,7 @@
             <column name="UUID" value="e47b3392-35bd-4220-ac52-a635eb7d4589"/>
             <column name="TITLE" value="Backup Database"/>
             <column name="DESCRIPTION" value="Perform a full backup of the production database before the system update."/>
-            <column name="STATUS" value="COMPLETED"/>
+            <column name="STATUS" value="DONE"/>
             <column name="PRIORITY" value="HIGH"/>
             <column name="DUE_DATE" valueDate="2024-12-27T23:59:59"/>
             <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>
@@ -133,7 +133,7 @@
             <column name="UUID" value="0e238a5b-6350-4303-b640-b26e8de26dbd"/>
             <column name="TITLE" value="Prepare Year-End Financial Statements"/>
             <column name="DESCRIPTION" value="Prepare and review year-end financial statements for 2024."/>
-            <column name="STATUS" value="COMPLETED"/>
+            <column name="STATUS" value="DONE"/>
             <column name="PRIORITY" value="HIGH"/>
             <column name="DUE_DATE" valueDate="2024-12-30T23:59:59"/>
             <column name="FK_USER_ID" valueComputed="(select PK_ID from USERS_TBL where UUID='123e4567-e89b-12d3-a456-426614174000')"/>

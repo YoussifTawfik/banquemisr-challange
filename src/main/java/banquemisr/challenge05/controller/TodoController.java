@@ -1,10 +1,7 @@
 package banquemisr.challenge05.controller;
 
-import banquemisr.challenge05.dto.CreateTodoReqDto;
-import banquemisr.challenge05.dto.CreateTodoResponse;
-import banquemisr.challenge05.dto.TodoListingResponse;
+import banquemisr.challenge05.dto.*;
 import banquemisr.challenge05.entity.Todo;
-import banquemisr.challenge05.projection.TodoView;
 import banquemisr.challenge05.security.JwtClaims;
 import banquemisr.challenge05.service.TodoService;
 import com.turkraft.springfilter.boot.Filter;
@@ -36,7 +33,7 @@ public class TodoController {
 
     @PreAuthorize("hasAuthority('READ')")
     @GetMapping("/{uuid}")
-    public ResponseEntity<TodoView> findByUuid(@PathVariable String uuid) {
+    public ResponseEntity<TodoDetailsResponseDto> findByUuid(@PathVariable String uuid) {
         return ResponseEntity.ok(todoService.findByUuid(uuid, jwtClaims.getUserUuid()));
     }
 
@@ -51,6 +48,13 @@ public class TodoController {
     @DeleteMapping("/{uuid}")
     public ResponseEntity<Void> delete(@PathVariable String uuid) {
         todoService.delete(uuid, jwtClaims.getUserUuid());
+        return ResponseEntity.ok().build();
+    }
+
+    @PreAuthorize("hasAuthority('UPDATE')")
+    @PatchMapping("/{uuid}")
+    public ResponseEntity<Void> update(@PathVariable String uuid, @RequestBody UpdateTodoReqDto updateTodoReqDto) {
+        todoService.update(uuid, jwtClaims.getUserUuid(), updateTodoReqDto);
         return ResponseEntity.ok().build();
     }
 }
